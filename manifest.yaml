@@ -1,0 +1,71 @@
+basePath: /
+definitions:
+  Server:
+    properties:
+      city: {type: string}
+      provider: {type: string}
+      public_ip: {type: string}
+      state: {type: string}
+      zip_code: {type: string}
+    type: object
+host: 10.244.108.173:6003
+info:
+  contact: {email: nakamoto@nakamoto.com, name: Satoshi Nakamoto}
+  description: Run a traceroute on demand for bitcoin.
+  title: Bitroute
+  x-21-category: utilities
+  x-21-github-project-url: https://github.com/21dotco/bitroute
+  x-21-keywords: [traceroute, network]
+  x-21-quick-buy: "$ 21 buy url http://10.244.108.172:6003/?uri=google.com\n\n# Output:\n\
+    # {  \n#     \"server\":{  \n#         \"city\":\"San Francisco\",\n#        \
+    \ \"country\":\"US\",\n#         \"hostname\":\"10-21-28-12.static.wiline.com\"\
+    ,\n#         \"ip\":\"10.21.28.12\",\n#         \"loc\":\"37.7749,-122.4194\"\
+    ,\n#         \"org\":\"AS33544 WiLine Networks Inc.\",\n#         \"postal\":\"\
+    94158\",\n#         \"region\":\"California\"\n#     },\n#     \"traceroute\"\
+    :[  \n#         \"traceroute to google.com (172.217.1.46), 30 hops max, 60 byte\
+    \ packets\",\n#         \" 1  192.168.128.1 (192.168.128.1)  0.496 ms  0.343 ms\
+    \  0.235 ms\",\n#         \" 2  10-21-28-12.static.wiline.com (10.21.28.12)  11.196\
+    \ ms  11.562 ms  11.692 ms\",\n#         \" 3  10-21-28-12.static.wiline.com (10.21.28.12)\
+    \  11.272 ms  11.386 ms  11.678 ms\",\n#         \" 4  10.20.91.17 (10.20.91.17)\
+    \  16.580 ms  17.269 ms  18.038 ms\",\n#         \" 5  10.20.91.30 (10.20.91.30)\
+    \  11.177 ms  11.732 ms  11.821 ms\",\n#         \" 6  sfosf0077ra90101-v20.wiline.com\
+    \ (216.75.229.1)  11.842 ms  11.820 ms  12.240 ms\",\n#         \" 7  216-75-229-9.static.wiline.com\
+    \ (216.75.229.9)  11.430 ms  11.637 ms  11.331 ms\",\n#         \" 8  10.20.50.114\
+    \ (10.20.50.114)  11.740 ms  11.844 ms  11.997 ms\",\n#         \" 9  10.20.50.109\
+    \ (10.20.50.109)  11.525 ms  11.666 ms  11.645 ms\",\n#         \"10  10.21.42.22\
+    \ (10.21.42.22)  12.361 ms  12.723 ms  13.128 ms\",\n#         \"11  10.20.186.237\
+    \ (10.20.186.237)  12.070 ms  12.054 ms  12.531 ms\",\n#         \"12  xe-3-2-1.mpr3.sfo7.us.above.net\
+    \ (208.184.37.89)  11.629 ms  11.537 ms  12.243 ms\",\n#         \"13  ae1.mpr4.sfo7.us.zip.zayo.com\
+    \ (64.125.31.30)  12.290 ms  31.622 ms  30.234 ms\",\n#         \"14  ae5.cr2.sjc2.us.zip.zayo.com\
+    \ (64.125.26.21)  13.252 ms  13.161 ms  13.071 ms\",\n#         \"15  ae16.mpr4.sjc7.us.zip.zayo.com\
+    \ (64.125.31.15)  12.980 ms  13.435 ms  13.334 ms\",\n#         \"16  64.125.13.111\
+    \ (64.125.13.111)  13.937 ms  14.163 ms  13.993 ms\",\n#         \"17  216.239.49.168\
+    \ (216.239.49.168)  14.769 ms  14.714 ms  14.767 ms\",\n#         \"18  209.85.246.38\
+    \ (209.85.246.38)  15.247 ms 209.85.249.63 (209.85.249.63)  15.271 ms 209.85.246.20\
+    \ (209.85.246.20)  15.000 ms\",\n#         \"19  64.233.174.206 (64.233.174.206)\
+    \  22.349 ms  22.253 ms 64.233.174.204 (64.233.174.204)  22.155 ms\",\n#     \
+    \    \"20  209.85.248.124 (209.85.248.124)  21.701 ms  22.157 ms  22.066 ms\"\
+    ,\n#         \"21  209.85.252.149 (209.85.252.149)  22.482 ms  22.397 ms  22.727\
+    \ ms\",\n#         \"22  lax17s01-in-f14.1e100.net (172.217.1.46)  21.690 ms \
+    \ 22.110 ms  22.015 ms\"\n#     ]\n# }"
+  x-21-total-price: {max: 1000, min: 1000}
+paths:
+  /:
+    get:
+      consumes: [application/x-www-form-urlencoded]
+      produces: [application/json]
+      responses:
+        200:
+          description: Traceroute statistics and information on server location.
+          schema:
+            properties:
+              ping:
+                items: {type: string}
+                type: array
+              server: {$ref: '#/definitions/Server'}
+            type: object
+      summary: Return traceroute statistics between this device and a given domain
+        or IP.
+schemes: [http]
+swagger: '2.0'
+x-21-manifest-path: /manifest
