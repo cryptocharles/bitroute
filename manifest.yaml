@@ -8,7 +8,7 @@ definitions:
       state: {type: string}
       zip_code: {type: string}
     type: object
-host: 10.244.108.173:6003
+host: 10.244.195.170:6003
 info:
   contact: {email: nakamoto@nakamoto.com, name: Satoshi Nakamoto}
   description: Run a traceroute on demand for bitcoin.
