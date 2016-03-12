@@ -34,7 +34,7 @@ def manifest():
 
 
 @app.route('/')
-@payment.required(1000)
+@payment.required(10)
 def traceroute():
     """ Runs traceroute on the provided url
 
