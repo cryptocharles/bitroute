@@ -14,9 +14,9 @@ info:
   description: Run a traceroute on demand for bitcoin.
   title: Bitroute
   x-21-category: utilities
-  x-21-github-project-url: https://github.com/21dotco/bitroute
+  x-21-github-project-url: https://github.com/cryptocharles/bitroute.git
   x-21-keywords: [traceroute, network]
-  x-21-quick-buy: "$ 21 buy url http://10.244.108.172:6003/?uri=google.com\n\n# Output:\n\
+  x-21-quick-buy: "$ 21 buy url http://10.244.195.170:6003/?uri=google.com\n\n# Output:\n\
     # {  \n#     \"server\":{  \n#         \"city\":\"San Francisco\",\n#        \
     \ \"country\":\"US\",\n#         \"hostname\":\"10-21-28-12.static.wiline.com\"\
     ,\n#         \"ip\":\"10.21.28.12\",\n#         \"loc\":\"37.7749,-122.4194\"\
